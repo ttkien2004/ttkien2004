@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {        
+        int i = 0, max = -1e9;
+        if(s == "") return 0;
+        while(i < s.size()){
+            int arr[1000] = {0};
+            int j = i+1;
+            int count = 1;
+            while(s[j] != s[i] && j < s.size() && arr[s[j]] < 1){
+                ++count;
+                arr[s[j]]++;
+                j++;
+            }
+            if(count > max) max = count;
+            i++;
+        }
+        return max;
+    }
+};
