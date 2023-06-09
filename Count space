@@ -1,0 +1,26 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int number;
+    string input;
+    cin >> number;
+    cin.ignore();
+    for(int i = 0; i < number; i++){
+        getline(cin, input);
+        int j = 1, count = 0;
+        while(j < input.size()){
+            if(input[j] == ' ' && input[j-1] != ' ') count ++;
+            j++;
+        }
+        if(input[input.size()] == ' ' ) count+=1;
+        cout << count << '\n';
+    }
+    
+    
+
+    return 0;
+}
